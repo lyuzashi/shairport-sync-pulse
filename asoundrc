@@ -1,0 +1,17 @@
+pcm.pulse {
+    type pulse
+    # The following line specifies the path to the PulseAudio Unix socket on the host
+    server "unix:/run/pulse/native"
+}
+
+ctl.pulse {
+    type pulse
+    # The following line specifies the path to the PulseAudio Unix socket on the host
+    server "unix:/run/pulse/native"
+}
+
+pcm.!default {
+    type asym
+    playback.pcm "pulse"
+    capture.pcm "hw:0,0"
+}
